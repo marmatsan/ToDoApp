@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ToDoApp</string>
+    <string name="cd_add_button">Add button</string>
+    <string name="cd_search_tasks">Search Tasks</string>
+    <string name="cd_sort_tasks">Sort Tasks</string>
+    <string name="l_delete_all">Delete All</string>
+    <string name="l_tareas">Tareas</string>
+    <string name="l_search">Search</string>
+    <string name="l_search_icon">Search Icon</string>
+    <string name="l_close_icon">Close Icon</string>
+</resources>
