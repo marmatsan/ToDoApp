@@ -8,4 +8,6 @@
     <string name="l_search">Search</string>
     <string name="l_search_icon">Search Icon</string>
     <string name="l_close_icon">Close Icon</string>
+    <string name="cd_no_tasks_available">No tasks available</string>
+    <string name="no_tasks_found">No tasks found</string>
 </resources>
