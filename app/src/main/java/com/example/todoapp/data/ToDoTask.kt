@@ -10,7 +10,7 @@ import com.example.todoapp.util.Constants
 data class ToDoTask(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id: Int = 0,
+    val id: Int,
 
     @ColumnInfo(name = "title")
     val title: String,

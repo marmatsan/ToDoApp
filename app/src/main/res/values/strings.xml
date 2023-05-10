@@ -10,4 +10,9 @@
     <string name="l_close_icon">Close Icon</string>
     <string name="cd_no_tasks_available">No tasks available</string>
     <string name="no_tasks_found">No tasks found</string>
+    <string name="cd_back_arrow">Back Arrow</string>
+    <string name="cd_add_task">Add task</string>
+    <string name="cd_close_icon">Close icon</string>
+    <string name="cd_delete_icon">Delete icon</string>
+    <string name="cd_update_icon">Update icon</string>
 </resources>

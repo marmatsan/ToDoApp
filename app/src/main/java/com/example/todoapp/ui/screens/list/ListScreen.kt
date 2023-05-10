@@ -20,7 +20,6 @@ import com.example.todoapp.R
 import com.example.todoapp.ui.viewmodels.SharedViewModel
 import com.example.todoapp.util.SearchAppBarState
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ListScreen(
@@ -32,7 +31,7 @@ fun ListScreen(
         sharedViewModel.getAllTasks()
     }
 
-    val allTasks by sharedViewModel.allTasks.collectAsStateWithLifecycle()
+    val requestState by sharedViewModel.requestState.collectAsStateWithLifecycle()
     val searchAppBarState: SearchAppBarState by sharedViewModel.searchAppBarState.collectAsStateWithLifecycle()
     val searchTextState: String by sharedViewModel.searchTextState.collectAsStateWithLifecycle()
 
@@ -48,10 +47,12 @@ fun ListScreen(
         floatingActionButton = {
             ListFab(onFabClicked = navigateToTaskScreen)
         }
-    ){
+    ) { paddingValues ->
         ListContent(
-            modifier = Modifier.fillMaxSize().padding(it),
-            toDoTaskList = allTasks,
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(paddingValues),
+            requestState = requestState,
             navigateToTaskScreen = navigateToTaskScreen
         )
     }

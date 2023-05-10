@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -29,35 +30,40 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.todoapp.data.ToDoTask
 import com.example.todoapp.data.models.Priority
 import com.example.todoapp.util.Constants
+import com.example.todoapp.util.RequestState
 
 @Composable
 fun ListContent(
     modifier: Modifier,
-    toDoTaskList: List<ToDoTask>,
+    requestState: RequestState<*>,
     navigateToTaskScreen: (taskId: Int) -> Unit
 ) {
-    if (toDoTaskList.isEmpty()) {
-        EmptyContent()
-    } else {
-        DisplayTasks(
-            modifier = modifier,
-            toDoTaskList = toDoTaskList,
-            navigateToTaskScreen = navigateToTaskScreen
-        )
+    if (requestState is RequestState.Success) {
+        val tasks = requestState.data
+
+        if (tasks.isEmpty()) {
+            EmptyContent()
+        } else {
+            DisplayTasks(
+                modifier = modifier,
+                tasks = tasks,
+                navigateToTaskScreen = navigateToTaskScreen
+            )
+        }
     }
 }
 
 @Composable
 fun DisplayTasks(
     modifier: Modifier,
-    toDoTaskList: List<ToDoTask>,
+    tasks: List<ToDoTask>,
     navigateToTaskScreen: (taskId: Int) -> Unit
 ) {
     LazyColumn(
         modifier = modifier
     ) {
         items(
-            items = toDoTaskList,
+            items = tasks,
             key = { task ->
                 task.id
             }
@@ -105,9 +111,7 @@ fun TaskItem(
                     contentAlignment = Alignment.TopEnd
                 ) {
                     Canvas(
-                        modifier = Modifier
-                            .width(Constants.Dimensions.PRIORITY_INDICATOR_SIZE)
-                            .height(Constants.Dimensions.PRIORITY_INDICATOR_SIZE)
+                        modifier = Modifier.size(Constants.Dimensions.PRIORITY_INDICATOR_SIZE)
                     ) {
                         drawCircle(color = toDoTask.priority.color)
                     }
@@ -133,27 +137,4 @@ fun TaskItemPreview() {
             description = "Description",
             priority = Priority.LOW
         ), navigateToTaskScreen = {})
-}
-
-@Composable
-@Preview
-fun ListContentPreview() {
-    ListContent(
-        modifier = Modifier,
-        toDoTaskList = listOf(
-            ToDoTask(
-                id = 0,
-                title = "Title",
-                description = "Description",
-                priority = Priority.LOW
-            ),
-            ToDoTask(
-                id = 1,
-                title = "Title",
-                description = "Description",
-                priority = Priority.LOW
-            )
-        ),
-        navigateToTaskScreen = {}
-    )
 }
