@@ -45,7 +45,7 @@ fun ListScreen(
             )
         },
         floatingActionButton = {
-            ListFab(onFabClicked = navigateToTaskScreen)
+            ListFabButton(onClicked = navigateToTaskScreen)
         }
     ) { paddingValues ->
         ListContent(
@@ -59,11 +59,11 @@ fun ListScreen(
 }
 
 @Composable
-fun ListFab(
-    onFabClicked: (taskId: Int) -> Unit
+fun ListFabButton(
+    onClicked: (taskId: Int) -> Unit
 ) {
     FloatingActionButton(onClick = {
-        onFabClicked(-1)
+        onClicked(-1)
     }) {
         Icon(
             imageVector = Icons.Filled.Add,

@@ -26,6 +26,8 @@ object Constants {
 
         val TOPAPPBAR_HEIGHT = 56.dp
         val TASK_ITEM_ELEVATION = 2.dp
+
+        val PRIORITY_DROP_DOWN_HEIGHT = 60.dp
     }
 
     // Extension properties

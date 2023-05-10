@@ -9,8 +9,8 @@ import com.example.todoapp.ui.viewmodels.SharedViewModel
 import com.example.todoapp.util.Constants
 
 fun NavGraphBuilder.listComposable(
-    navigateToTaskScreen: (taskId: Int) -> Unit,
-    sharedViewModel: SharedViewModel
+    sharedViewModel: SharedViewModel,
+    navigateToTaskScreen: (taskId: Int) -> Unit
 ) {
     composable(
         route = Constants.Navigation.LIST_SCREEN,

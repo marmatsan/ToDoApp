@@ -166,7 +166,7 @@ fun SearchAction(
 fun SortAction(
     onSortClicked: (Priority) -> Unit
 ) {
-    var expanded by remember { mutableStateOf(value = false) }
+    var expanded by remember { mutableStateOf(false) }
     val onItemClicked: () -> Unit = { expanded = false }
 
     IconButton(onClick = { expanded = true }) {

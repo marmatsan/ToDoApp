@@ -23,8 +23,8 @@ fun SetupNavigation(
         startDestination = Constants.Navigation.LIST_SCREEN
     ) {
         listComposable(
-            navigateToTaskScreen = screen.task,
-            sharedViewModel = sharedViewModel
+            sharedViewModel = sharedViewModel,
+            navigateToTaskScreen = screen.task
         )
         taskComposable(
             navigateToListScreen = screen.list,
