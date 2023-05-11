@@ -16,4 +16,6 @@
     <string name="cd_delete_icon">Delete icon</string>
     <string name="cd_update_icon">Update icon</string>
     <string name="cd_dropdown_arrow">Dropdown Arrow</string>
+    <string name="l_description">Description</string>
+    <string name="l_title">Title</string>
 </resources>
