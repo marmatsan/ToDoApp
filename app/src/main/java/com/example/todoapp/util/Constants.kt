@@ -12,6 +12,7 @@ object Constants {
     object Navigation {
         const val LIST_ARGUMENT_KEY = "action"
         const val TASK_ARGUMENT_KEY = "taskId"
+        const val SPLASH_SCREEN = "splash"
 
         const val LIST_SCREEN = "list/{$LIST_ARGUMENT_KEY}"
         const val TASK_SCREEN = "task/{$TASK_ARGUMENT_KEY}"
@@ -28,6 +29,7 @@ object Constants {
         val TASK_ITEM_ELEVATION = 2.dp
 
         val PRIORITY_DROP_DOWN_HEIGHT = 60.dp
+        val LOGO_SIZE = 100.dp
     }
 
     // Extension properties

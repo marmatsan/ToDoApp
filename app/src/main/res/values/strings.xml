@@ -18,4 +18,5 @@
     <string name="cd_dropdown_arrow">Dropdown Arrow</string>
     <string name="l_description">Description</string>
     <string name="l_title">Title</string>
+    <string name="cd_app_logo">App logo</string>
 </resources>
